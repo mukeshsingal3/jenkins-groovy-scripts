@@ -1,6 +1,6 @@
 This wiki contains code snippets to get more into Jenkins Nodes or Computers 
 
-** Get list of Avaiable Nodes in Jenkins **
+**Get list of Avaiable Nodes in Jenkins**
 
 ```groovy
 void getNodeList(Jenkins instance) {
@@ -10,7 +10,7 @@ void getNodeList(Jenkins instance) {
 }
 ```
 
-** Get the list of label assigned to Nodes**
+**Get the list of label assigned to Nodes**
 ```groovy
 void getLabelList(Jenkins instance){
     instance.getC
@@ -24,14 +24,14 @@ void getLabelList(Jenkins instance){
 }
 ```
 
-** Get Current build Node name **
+**Get Current build Node name**
 ```groovy
 void getCurrentBuildNodeName() {
     println(Computer.currentComputer().getDisplayName())
 }
 ```
 
-** Get Number of Executors in Current Slave **
+**Get Number of Executors in Current Slave**
 ```groovy
 void getNumberOfExecutorInCurrentSlave() {
     println(Computer.currentComputer().countExecutors())
