@@ -1,6 +1,6 @@
 This wiki contains code snippets to get more into Jenkins Nodes or Computers 
 
-**get list of Avaiable Nodes in Jenkins**
+** Get list of Avaiable Nodes in Jenkins **
 
 ```groovy
 void getNodeList(Jenkins instance) {
@@ -26,7 +26,7 @@ void getLabelList(Jenkins instance){
 }
 ```
 
-**Get Current build Node name**
+** Get Current build Node name **
 ```groovy
 void getCurrentBuildNodeName() {
     println("--------------------- Current Node Name ------------------------------")
