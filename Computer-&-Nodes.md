@@ -4,17 +4,15 @@ This wiki contains code snippets to get more into Jenkins Nodes or Computers
 
 ```groovy
 void getNodeList(Jenkins instance) {
-    println("--------------------- List of Available Nodes ------------------------------")
     instance.computers.each { comp ->
         println("  " + comp.displayName + "     isOffline -> " + comp.isOffline())
     }
 }
 ```
 
-** Get list of label assigned to Nodes**
+** Get the list of label assigned to Nodes**
 ```groovy
 void getLabelList(Jenkins instance){
-    println("--------------------- List of Available Labels ------------------------------")
     instance.getC
     instance.getLabels().each {
         println(it.getName() )
@@ -29,7 +27,6 @@ void getLabelList(Jenkins instance){
 ** Get Current build Node name **
 ```groovy
 void getCurrentBuildNodeName() {
-    println("--------------------- Current Node Name ------------------------------")
     println(Computer.currentComputer().getDisplayName())
 }
 ```
@@ -37,7 +34,6 @@ void getCurrentBuildNodeName() {
 ** Get Number of Executors in Current Slave **
 ```groovy
 void getNumberOfExecutorInCurrentSlave() {
-    println("--------------------- Number of Executer in Current Slave ------------------------------")
     println(Computer.currentComputer().countExecutors())
 }
 ```
