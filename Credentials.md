@@ -1,4 +1,4 @@
-**Get access to currently defined credentials **
+**Get access to currently defined credentials**
 
 ```groovy
 def credentials_store = jenkins.model.Jenkins.instance.getExtensionList(
@@ -13,5 +13,23 @@ credentials_store[0].credentials.each { it ->
       println "description = ${it.description}"
       println("= = = = = = =")
     }
+}
+```
+```
+import com.cloudbees.plugins.credentials.Credentials
+
+Set<Credentials> allCredentials = new HashSet<Credentials>();
+
+def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+      com.cloudbees.plugins.credentials.Credentials.class
+);
+
+allCredentials.addAll(creds)
+
+Jenkins.instance.getAllItems(com.cloudbees.hudson.plugins.folder.Folder.class).each{ f ->
+ creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+      com.cloudbees.plugins.credentials.Credentials.class, f)
+  allCredentials.addAll(creds)
+  
 }
 ```
