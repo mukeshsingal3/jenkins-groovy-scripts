@@ -15,7 +15,9 @@ credentials_store[0].credentials.each { it ->
     }
 }
 ```
-```
+
+*Method 2*
+```groovy
 import com.cloudbees.plugins.credentials.Credentials
 
 Set<Credentials> allCredentials = new HashSet<Credentials>();
